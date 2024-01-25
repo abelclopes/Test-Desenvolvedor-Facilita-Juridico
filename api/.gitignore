@@ -1,0 +1,33 @@
+# Dependências do Node.js
+node_modules/
+npm-debug.log
+
+# Arquivos de compilação TypeScript
+dist/
+
+# Arquivos de ambiente (não compartilhe informações sensíveis)
+.env
+
+# Logs
+logs/
+*.log
+
+# Arquivos temporários
+*.tmp
+
+# Arquivos gerados durante o desenvolvimento
+*.bak
+*.swp
+
+# Arquivos de configuração do VSCode
+.vscode/
+
+# Arquivos de dependência Yarn
+yarn-error.log
+
+# Arquivos de cache
+.cache/
+
+# Diretório de saída do build
+build/
+db/postgres_data
