@@ -1,0 +1,9 @@
+// .eslintignore
+build/*
+public/*
+vite.config.ts
+src/vite-env.d.ts
+src/reportWebVitals.ts
+src/service-worker.ts
+src/serviceWorkerRegistration.ts
+src/setupTests.ts

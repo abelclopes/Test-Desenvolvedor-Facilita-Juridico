@@ -1,6 +1,7 @@
 // app.js
 
 import express from 'express';
+const cors = require('cors');
 import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from '../swaggerConfig';
@@ -8,6 +9,7 @@ dotenv.config();
 import ClientesController from '../controllers/cliente-controller';
 
 const app = express();
+app.use(cors({ origin: '*' }));
 
 const PORT = process.env.PORT || 3000;
 

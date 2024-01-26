@@ -1,0 +1,125 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
+  "extends": ["airbnb", "airbnb-typescript", "airbnb/hooks", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*"]
+      }
+    ],
+    "camelcase": 0,
+    "radix": 0,
+    "no-alert": 0,
+    "no-console": 0,
+    "no-unused-vars": 0,
+    "no-param-reassign": 0,
+    "no-underscore-dangle": 0,
+    "no-restricted-exports": 0,
+    "no-plusplus": 0,
+    "no-template-curly-in-string": 0,
+    "no-nested-ternary": 0,
+    "no-promise-executor-return": 0,
+    "no-await-in-loop": 0,
+    "import/no-absolute-path": 0,
+    "react/no-danger": 0,
+    "import/no-duplicates": 0,
+    "import/no-cycle": 0,
+    "import/prefer-default-export": 0,
+    "jsx-a11y/control-has-associated-label": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "@typescript-eslint/naming-convention": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/no-shadow": 0,
+    "@typescript-eslint/no-unused-vars": [
+      1,
+      {
+        "args": "none"
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react-hooks/exhaustive-deps": 1,
+    "jsx-a11y/label-has-associated-control": [ 2, { "controlComponents": ["Checkbox"], "depth": 3 }],
+    "react-hooks/rules-of-hooks": 0,
+    "react/no-children-prop": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/require-default-props": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/function-component-definition": 0,
+    "react/jsx-no-useless-fragment": [
+      1,
+      {
+        "allowExpressions": true
+      }
+    ],
+    "prefer-destructuring": [
+      1,
+      {
+        "object": true,
+        "array": false
+      }
+    ],
+    "react/no-unstable-nested-components": [
+      1,
+      {
+        "allowAsProps": true
+      }
+    ],
+    "react/jsx-no-duplicate-props": [
+      1,
+      {
+        "ignoreCase": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Packages `react` related packages come first.
+              ["^react", "^@?\\w"],
+              // Internal packages.
+              ["^(@|components)(/.*|$)"],
+              // Side effect imports.
+              ["^\\u0000"],
+              // Parent imports. Put `..` last.
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Other relative imports. Put same-folder imports and `.` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style imports.
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
