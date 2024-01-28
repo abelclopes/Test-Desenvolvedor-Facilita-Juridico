@@ -1,14 +1,12 @@
-import './App.css'
-import { Box } from '@mui/material';
-import CustonRouters from './routes';
+import React from 'react';
+import './App.css';
+import CustomRouters from './routes';
+import Layout from './components/Layout'; // Import the Layout component
 
-const App = ()=> {
-  return (
-    <Box>
-      <h1>test</h1>
-      <CustonRouters />
-    </Box>
-  )
+const App: React.FC = () => {
+  return (  
+      <CustomRouters />
+  );
 }
 
 export default App;

@@ -1,0 +1,13 @@
+# Arquivos de log
+*.log
+
+# Diretório node_modules
+node_modules/
+
+# Arquivos temporários
+.tmp/
+.temp/
+
+# Outros arquivos ou diretórios que deseja ignorar
+arquivo.txt
+

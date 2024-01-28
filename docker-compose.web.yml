@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontapp:
+    build:
+      context: ./front-app      
+      dockerfile: ./DockerFile       
+    volumes:
+      - ./front-app:/usr/src/app  
+    ports:
+      - "4200:4200"  
+    networks:
+      clientes-network:
+
+  api:
+    build:
+      context: ./api
+      dockerfile: ./DockerFile  
+    volumes:
+      - ./api:/usr/src/app  
+    ports:
+      - "3000:3000"
+    networks:
+      clientes-network:
+  
+  dbpostgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: clientes_db
+      POSTGRES_PASSWORD: "Postgres2024!"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/postgres_data:/var/lib/postgresql/data
+      - ./db/sql/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+    networks:
+      clientes-network:
+
+volumes:
+  dbpostgres_data:
+
+networks:
+  clientes-network:

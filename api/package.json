@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/app.js",
-    "dev": "ts-node src/app.ts"
+    "start": "node ./dist/src/app.js",
+    "dev": "ts-node src/app.ts",
+    "lint": "eslint --ext .ts,s.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ."
   },
   "keywords": [],
   "author": "",
